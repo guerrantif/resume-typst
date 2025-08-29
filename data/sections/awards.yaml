@@ -1,0 +1,25 @@
+awards:
+  - title: "Outstanding Graduate Student Award"
+    issuer: "MIT Department of Electrical Engineering and Computer Science"
+    year: 2024
+    description: "Recognizing exceptional research contributions in computer vision and machine learning"
+
+  - title: "Best Paper Award"
+    issuer: "Conference on Computer Vision and Pattern Recognition (CVPR)"
+    year: 2024
+    description: "For 'Efficient Vision Transformers for Real-Time Object Detection'"
+
+  - title: "Google PhD Fellowship"
+    issuer: "Google Research"
+    year: 2022
+    description: "Full funding for PhD research in machine learning and computer vision"
+
+  - title: "NSF Graduate Research Fellowship"
+    issuer: "National Science Foundation"
+    year: 2021
+    description: "Three-year fellowship supporting graduate study in computer science"
+
+  - title: "Phi Beta Kappa"
+    issuer: "University of California, Berkeley"
+    year: 2018
+    description: "Honor society recognizing academic excellence"

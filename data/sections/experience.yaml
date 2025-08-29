@@ -1,0 +1,34 @@
+positions:
+  - id: "mit_phd"
+    position: "PhD Research Assistant"
+    company: "Massachusetts Institute of Technology"
+    start_date: "2021-09"
+    end_date: "present"
+    location: "Cambridge, MA, USA"
+    details:
+      - "Develop novel deep learning architectures for computer vision applications in autonomous systems"
+      - "Published 6 first-author papers in top-tier conferences (CVPR, ICCV, NeurIPS)"
+      - "Collaborated with industry partners including Tesla and Waymo on real-world deployment"
+      - "Mentored 4 undergraduate researchers and 2 Master's students on computer vision projects"
+
+  - id: "google_intern"
+    position: "Research Intern"
+    company: "Google Research"
+    start_date: "2023-06"
+    end_date: "2023-09"
+    location: "Mountain View, CA, USA"
+    details:
+      - "Worked on large-scale vision transformer architectures for image understanding"
+      - "Developed efficient training techniques reducing compute requirements by 30%"
+      - "Contributed to open-source codebase with over 1000 GitHub stars"
+
+  - id: "startup_ml"
+    position: "Machine Learning Engineer"
+    company: "VisionTech AI"
+    start_date: "2020-01"
+    end_date: "2021-08"
+    location: "San Francisco, CA, USA"
+    details:
+      - "Built production ML pipelines processing 10M+ images daily"
+      - "Led team of 3 engineers developing real-time object detection systems"
+      - "Improved model accuracy by 15% while reducing latency by 40%"

@@ -1,0 +1,26 @@
+name: "Short CV"
+description: "Concise 1-2 page CV for quick applications"
+
+sections:
+  order:
+    - experience  # Most recent positions only
+    - education   # Degrees only, minimal details
+    - skills      # Key technical skills
+    - publications  # Top 3-5 publications only
+
+formatting:
+  publication_style: "minimal"
+  show_all_authors: false
+  bold_name_in_pubs: true
+  include_paper_links: false
+  show_supervision_details: false
+  show_teaching_details: false
+  compact_spacing: tru
+  
+filters:
+  publications:
+    include_all: false
+    max_entries: 3
+    prefer_first_author: true
+  experience:
+    include_all: true

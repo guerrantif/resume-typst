@@ -1,0 +1,26 @@
+name: "Industry CV"
+description: "Industry-focused CV emphasizing practical experience"
+
+sections:
+  order:
+    - experience
+    - education
+    - publications  # abbreviated
+    - skills
+    - awards
+
+formatting:
+  publication_style: "brief"
+  show_all_authors: false
+  bold_name_in_pubs: true
+  include_paper_links: false
+  show_supervision_details: false
+  show_teaching_details: false
+  
+filters:
+  publications:
+    include_all: false
+    max_entries: 5
+    prefer_first_author: true
+  experience:
+    emphasize_practical: true

@@ -1,0 +1,25 @@
+presentations:
+  - title: "Efficient Vision Transformers for Edge Computing"
+    event: "MIT CSAIL Student Seminar"
+    date: "2024-03"
+    location: "Cambridge, MA, USA"
+
+  - title: "Adversarial Robustness in Deep Learning: Theory and Practice"
+    event: "Google Research AI Seminar"
+    date: "2023-08"
+    location: "Mountain View, CA, USA"
+
+  - title: "Self-Supervised Learning for Computer Vision"
+    event: "Stanford AI Lab Colloquium"
+    date: "2023-05"
+    location: "Stanford, CA, USA"
+
+  - title: "Neural Architecture Search for Mobile Applications"
+    event: "Conference on Computer Vision and Pattern Recognition (CVPR) - Poster Session"
+    date: "2022-06"
+    location: "New Orleans, LA, USA"
+
+  - title: "Introduction to Deep Learning for Computer Vision"
+    event: "Berkeley AI Research (BAIR) Workshop"
+    date: "2021-11"
+    location: "Berkeley, CA, USA"

@@ -1,0 +1,36 @@
+students:
+  - level: "Master thesis"
+    student: "Emma Chen"
+    title: "Adversarial Training Techniques for Robust Image Classification"
+    year: 2024
+    cosupervisor: ["Prof. Sarah Chen"]
+
+  - level: "Master thesis"
+    student: "David Park"
+    title: "Efficient Neural Architecture Search for Mobile Computer Vision"
+    year: 2024
+    cosupervisor: ["Dr. Maria Rodriguez"]
+
+  - level: "Undergraduate research"
+    student: "Sophie Williams"
+    title: "Self-Supervised Learning for Visual Representation"
+    year: 2023
+    cosupervisor: ["Prof. Sarah Chen"]
+
+  - level: "Master thesis"
+    student: "James Liu"
+    title: "Federated Learning in Computer Vision Applications"
+    year: 2023
+    cosupervisor: ["Dr. Michael Zhang"]
+
+  - level: "Undergraduate research"
+    student: "Maria Garcia"
+    title: "Attention Mechanisms in Vision Transformers"
+    year: 2023
+    cosupervisor: []
+
+  - level: "Research assistant"
+    student: "Kevin Thompson"
+    title: "Multi-modal Fusion for Autonomous Driving"
+    year: 2022
+    cosupervisor: ["Prof. Sarah Chen"]

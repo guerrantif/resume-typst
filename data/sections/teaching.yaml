@@ -1,0 +1,28 @@
+courses:
+  - id: "cs229_ta"
+    course: "Machine Learning"
+    code: "CS229"
+    institution: "MIT"
+    role: "Teaching Assistant"
+    semester: "Fall 2023, Spring 2024"
+
+  - id: "vision_seminar"
+    course: "Advanced Computer Vision Seminar"
+    code: "6.869"
+    role: "Teaching Assistant"
+    institution: "MIT"
+    semester: "Fall 2022, Fall 2023"
+
+  - id: "deep_learning_lab"
+    course: "Deep Learning Systems Laboratory"
+    code: "6.S191"
+    role: "Lab Instructor"
+    institution: "MIT"
+    semester: "Spring 2022, Spring 2023"
+
+  - id: "undergrad_mentor"
+    course: "Undergraduate Research Mentorship Program"
+    code: "6.UAR"
+    role: "Mentor"
+    institution: "MIT"
+    semester: "2022-2024"

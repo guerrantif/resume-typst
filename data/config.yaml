@@ -1,0 +1,54 @@
+# CV Template Configuration
+
+layout:
+  paper: "us-letter"  # or "a4"
+  margins:
+    x: 0.7in
+    y: 0.9in
+  headings_col_size: 0.95in
+  gutter: 0.3in
+  
+typography:
+  fonts:
+    text: "Libertinus Serif"
+    mono: "DejaVu Sans Mono"
+  sizes:
+    body: 11.2pt
+    name: 1.6em
+    large: 1.1em
+    small: 0.9em
+    smaller: 0.8em
+  
+spacing:
+  paragraph: 0.4em
+  section: 1.5em
+  item: 1em
+  post_heading: 0.6em
+
+colors:
+  link: "#0645ad"
+  text: "#000000"
+
+formatting:
+  date_format: "MMM YYYY"
+  show_location: true
+  bold_names_in_pubs: true
+  bold_titles: true
+  lowercase_roles: true
+  role_separator: " in "
+  line_after_name: true
+  justify_text: true
+
+sections:
+  # Define which sections to show and in what order
+  order:
+    - experience
+    - education  
+    - publications
+    - supervision
+    - teaching
+    - awards
+    - reviewer
+    - memberships
+    - talks
+    - skills

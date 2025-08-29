@@ -1,0 +1,15 @@
+venues:
+  - venue: "Conference on Computer Vision and Pattern Recognition (CVPR)"
+    year: 2024
+
+  - venue: "International Conference on Computer Vision (ICCV)"
+    year: 2023
+
+  - venue: "Neural Information Processing Systems (NeurIPS)"
+    year: 2023
+
+  - venue: "International Conference on Machine Learning (ICML)"
+    year: 2022
+
+  - venue: "IEEE Transactions on Pattern Analysis and Machine Intelligence"
+    year: 2024

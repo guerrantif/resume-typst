@@ -1,0 +1,30 @@
+degrees:
+  - id: "phd_mit"
+    degree: "Ph.D."
+    field: "Artificial Intelligence"
+    institution: "Massachusetts Institute of Technology"
+    location: "Cambridge, MA, USA"
+    start_date: "2021-09"
+    end_date: "present"
+    details:
+      - "Research focus: reinforcement learning, multi-agent systems, and robotics"
+
+  - id: "msc_stanford"
+    degree: "M.Sc."
+    field: "Computer Science"
+    institution: "Stanford University"
+    location: "Stanford, CA, USA"
+    start_date: "2018-09"
+    end_date: "2020-06"
+    details:
+      - "Graduated with distinction, GPA 4.0/4.0; top 2% of class"
+
+  - id: "bsc_oxford"
+    degree: "B.Sc."
+    field: "Computer Science and Engineering"
+    institution: "University of Oxford"
+    location: "Oxford, UK"
+    start_date: "2015-10"
+    end_date: "2018-06"
+    details:
+      - "Final grade: First-Class Honours"

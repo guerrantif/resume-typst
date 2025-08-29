@@ -1,0 +1,12 @@
+categories:
+  - group: "Programming"
+    items: ["Python", "C++", "Java", "JavaScript", "Go"]
+
+  - group: "ML/AI Frameworks"
+    items: ["PyTorch", "TensorFlow", "JAX", "Hugging Face", "OpenCV"]
+
+  - group: "Tools & Platforms"
+    items: ["Docker", "Kubernetes", "AWS", "Git", "Linux"]
+
+  - group: "Databases"
+    items: ["PostgreSQL", "MongoDB", "Redis", "Elasticsearch"]
