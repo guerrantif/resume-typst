@@ -2,6 +2,10 @@
 
 A professional, production-ready CV template built with Typst following official template best practices. Features intelligent data filtering, unified configuration system, and highly customizable output variants.
 
+|Academic|Industry|Short|
+|:-:|:-:|:-:|
+|![academic CV](out/png/cv-academic-1.png)|![industry CV](out/png/cv-industry-1.png)|![short CV](out/png/cv-short-1.png)|
+
 ## Features
 
 - **Template Architecture** - Built using official Typst template structure for maximum reusability

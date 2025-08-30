@@ -1,40 +1,48 @@
 # CV Build System
 
-.PHONY: all academic industry short clean help
+SRC := build/cv.typ
 
-# Default target
+.PHONY: all academic industry short clean dev watch help force
+
+# Force rebuild
+force: ;
+
+# Pattern rules
+
+# PDF
+out/pdf/cv-%.pdf: $(SRC) | force
+	@mkdir -p $(dir $@)
+	typst compile $(SRC) $@ --root . --input variant=$* --format pdf --pdf-standard a-2b
+
+# PNG
+out/png/cv-%-{p}.png: $(SRC) | force
+	@mkdir -p $(dir $@)
+	typst compile $(SRC) $@ --root . --input variant=$* --format png --ppi 300
+
+# Convenience targets
+academic: out/pdf/cv-academic.pdf out/png/cv-academic-{p}.png
+industry: out/pdf/cv-industry.pdf out/png/cv-industry-{p}.png
+short:    out/pdf/cv-short.pdf out/png/cv-short-{p}.png
+
+# Default target builds all variants
 all: academic industry short
 
-# Build specific variants using parameters
-academic:
-	typst compile build/cv.typ out/cv-academic.pdf --root . --input variant=academic
-
-industry:
-	typst compile build/cv.typ out/cv-industry.pdf --root . --input variant=industry
-
-short:
-	typst compile build/cv.typ out/cv-short.pdf --root . --input variant=short
-
-# Clean build artifacts
+# Clean
 clean:
-	rm -f out/*.pdf
+	rm -f out/*/*
 
-# Development - quick compile for testing (defaults to academic)
+# Quick compile for testing (defaults to academic/pdf)
 dev:
-	typst compile build/cv.typ --root .
+	typst compile $(SRC) --root .
 
-# Watch mode for development
+# Watch mode
 watch:
-	typst watch build/cv.typ --root . --input variant=academic
+	typst watch $(SRC) --root . --input variant=academic
 
 # Help
 help:
-	@echo "Available targets:"
-	@echo "  all        - Build all CV variants"
-	@echo "  academic   - Build academic CV"
-	@echo "  industry   - Build industry CV"  
-	@echo "  short      - Build short CV"
-	@echo "  clean      - Remove PDF files"
-	@echo "  dev        - Quick compile for testing"
-	@echo "  watch      - Watch mode for development"
-	@echo "  help       - Show this help"
+	@echo "Usage:"
+	@echo "  make all                  # build all CV variants in PDF and PNG"
+	@echo "  make academic             # build academic variant PDF and PNG"
+	@echo "  make academic format=png  # build academic PNG (optional single run)"
+	@echo "  make clean                # remove all outputs"
