@@ -12,10 +12,7 @@ sections:
 formatting:
   publication_style: "brief"
   show_all_authors: false
-  bold_name_in_pubs: true
   include_paper_links: false
-  show_supervision_details: false
-  show_teaching_details: false
   
 filters:
   publications:

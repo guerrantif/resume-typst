@@ -24,6 +24,7 @@ spacing:
   section: 1.5em
   item: 1em
   post_heading: 0.6em
+  line_after_name: 0.3em
 
 colors:
   link: "#0645ad"
@@ -32,12 +33,13 @@ colors:
 formatting:
   date_format: "MMM YYYY"
   show_location: true
-  bold_names_in_pubs: true
+  bold_name_in_pubs: true
   bold_titles: true
   lowercase_roles: true
   role_separator: " in "
   line_after_name: true
   justify_text: true
+  list_marker: "--"
 
 sections:
   # Define which sections to show and in what order

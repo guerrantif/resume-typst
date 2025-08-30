@@ -3,6 +3,26 @@
 #import "components.typ": *
 #import "styles.typ": *
 
+// Header component
+#let render-header(personal, config) = {
+  let sizes = text-sizes(config)
+  
+  grid(
+    columns: (auto, 1fr),
+    gutter: eval(config.layout.gutter),
+    [#text(size: sizes.name, weight: "bold")[#align(left+bottom)[#personal.name.full]]],
+    text(size: sizes.smaller)[#align(right+bottom)[#mono-font(config, build-contact(personal.contact))]]
+  )
+  
+  if config.formatting.line_after_name {
+    v(eval(config.spacing.line_after_name))
+    line(length: 100%, stroke: 1pt + black)
+    v(eval(config.spacing.section))
+  } else {
+    v(eval(config.spacing.section) - 0.1in)
+  }
+}
+
 // Experience renderer
 #let render-experience(exp, config) = {
   let position = if "position" in exp { exp.position } else { panic("Experience entry missing 'position' field") }
@@ -30,22 +50,22 @@
 }
 
 // Publication renderer
-#let render-publication(pub, config, cv_name, variant) = {
-  let authors = if variant.formatting.publication_style == "brief" and variant.formatting.show_all_authors == false {
+#let render-publication(pub, config, cv_name) = {
+  let authors = if config.formatting.publication_style == "brief" and config.formatting.show_all_authors == false {
     if pub.authors.len() <= 2 {
-      pub.authors.map(a => format-author-name(a, cv_name, should_bold: variant.formatting.bold_name_in_pubs)).join(", ")
+      pub.authors.map(a => format-author-name(a, cv_name, should_bold: config.formatting.bold_name_in_pubs)).join(", ")
     } else {
-      let first_author = format-author-name(pub.authors.first(), cv_name, should_bold: variant.formatting.bold_name_in_pubs)
+      let first_author = format-author-name(pub.authors.first(), cv_name, should_bold: config.formatting.bold_name_in_pubs)
       first_author + " et al."
     }
   } else {
-    pub.authors.map(a => format-author-name(a, cv_name, should_bold: variant.formatting.bold_name_in_pubs)).join(", ")
+    pub.authors.map(a => format-author-name(a, cv_name, should_bold: config.formatting.bold_name_in_pubs)).join(", ")
   }
   
   let year = if "year" in pub { "(" + str(pub.year) + ")" } else { "" }
   let title = if "title" in pub { smartquote() + pub.title + smartquote() } else { "" }
   let venue = if "venue" in pub { italic-text(pub.venue) } else { "" }
-  let link_part = if variant.formatting.include_paper_links {
+  let link_part = if config.formatting.include_paper_links {
     link-icon(if "link" in pub { pub.link } else { none }, config)
   } else { "" }
 
@@ -160,9 +180,9 @@
   let items = if "items" in skill { skill.items } else { panic("Skill entry missing 'items' field") }
   
   grid(
-    columns: (1.12in, 1fr),
+    columns: (1.32in, 1fr),
     gutter: eval(config.layout.gutter),
-    align(right)[#small-caps-text(group)],
+    [#set par(justify: false); #align(right)[#small-caps-text(group)]],
     text(items.join(", "))
   )
 }

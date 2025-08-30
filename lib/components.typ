@@ -27,7 +27,7 @@
   let start_str = custom-date-format(start_datetime, format)
   let end_str = if lower(end) == "present" { "Present" } else { custom-date-format(end_datetime, format) }
 
-  start_str + " – " + end_str
+  start_str + sym.dash.em + end_str
 }
 
 // Text processing utilities
@@ -77,8 +77,10 @@
   if "linkedin" in data and data.linkedin != "" { 
     parts.push(link(data.linkedin)[LinkedIn]) 
   }
-  
-  parts.join(" | ")
+  stack(
+    spacing: 0.1in,
+    ..parts.map(p => text(p))
+  )
 }
 
 // Entry components
@@ -116,32 +118,20 @@
 }
 
 #let entry-details(details, config) = {
-  if details != none and details.len() > 0 { 
-    v(eval(config.spacing.post_heading))
-    list(..details) 
-  } else { none }
-}
-
-// Header component
-#let render-header(personal, config) = {
-  let sizes = text-sizes(config)
-  
-  grid(
-    columns: (auto, 1fr),
-    gutter: eval(config.layout.gutter),
-    [#text(size: sizes.name, weight: "bold")[#align(left+bottom)[#personal.name.full]]],
-    text(size: sizes.small)[#align(right+bottom)[#mono-font(config, build-contact(personal))]]
-  )
-  
-  if config.formatting.line_after_name {
-    v(eval(config.spacing.post_heading) / 2)
-    line(length: 100%, stroke: 1pt + black)
-    v(eval(config.spacing.section))
-  } else {
-    v(eval(config.spacing.section) - 0.1in)
+  // Skip details if compact mode is enabled and hide_details is true
+  let should_hide = ("compact_spacing" in config.formatting and 
+                    config.formatting.compact_spacing and
+                    "hide_details" in config.formatting and 
+                    config.formatting.hide_details)
+                   
+  if should_hide or details == none or details.len() == 0 { 
+    return none 
   }
+  
+  v(eval(config.spacing.post_heading))
+  list(..details)
+  v(eval(config.spacing.post_heading))
 }
-
 // Link icon helper
 #let link-icon(url, config) = {
   if url != none and url != "" {

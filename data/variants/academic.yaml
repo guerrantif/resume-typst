@@ -16,11 +16,8 @@ sections:
 
 formatting:
   publication_style: "academic"
-  show_all_authors: true
-  bold_name_in_pubs: true
+  show_all_authors: false
   include_paper_links: true
-  show_supervision_details: true
-  show_teaching_details: true
   
 filters:
   publications:

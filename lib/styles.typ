@@ -1,25 +1,4 @@
-// styles.typ - Typography and visual styling
-
-#let setup-document(config) = {
-  // Set up fonts
-  set text(
-    font: config.typography.fonts.text, 
-    size: eval(config.typography.sizes.body),
-    fill: rgb(config.colors.text)
-  )
-  
-  // Set up paragraphs  
-  set par(
-    spacing: eval(config.spacing.paragraph),
-    justify: config.formatting.justify_text
-  )
-  
-  // Set up lists
-  set list(marker: [--], indent: 0em)
-  
-  // Style links
-  show link: it => text(fill: rgb(config.colors.link))[#it]
-}
+// styles.typ - Typography and visual styling utilities
 
 #let text-sizes(config) = {
   (
