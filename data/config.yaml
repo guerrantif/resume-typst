@@ -7,7 +7,7 @@ layout:
     y: 0.9in
   headings_col_size: 0.95in
   gutter: 0.3in
-  
+
 typography:
   fonts:
     text: "Libertinus Serif"
@@ -18,7 +18,7 @@ typography:
     large: 1.1em
     small: 0.9em
     smaller: 0.8em
-  
+
 spacing:
   paragraph: 0.4em
   section: 1.5em
@@ -45,7 +45,7 @@ sections:
   # Define which sections to show and in what order
   order:
     - experience
-    - education  
+    - education
     - publications
     - supervision
     - teaching

@@ -14,7 +14,7 @@ formatting:
   include_paper_links: false
   compact_spacing: true
   hide_details: true
-  
+
 filters:
   publications:
     include_all: false

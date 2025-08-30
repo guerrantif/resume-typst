@@ -13,7 +13,7 @@ formatting:
   publication_style: "brief"
   show_all_authors: false
   include_paper_links: false
-  
+
 filters:
   publications:
     include_all: false
