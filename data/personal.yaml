@@ -1,11 +1,11 @@
 name:
-  full: "Alex Jordan"
+  full: "Dr. Alice Wonderland"
   variants:
-    - "Alex Jordan"
-    - "A. Jordan"
-    - "Jordan, A."
+    - "Alice Wonderland"
+    - "A. Wonderland"
+    - "Wonderland, A."
 
 contact:
-  email: "alex.jordan@university.edu"
-  website: "https://alexjordan.github.io"
-  location: "Boston, MA, USA"
+  email: "alice.wonderland@university.eu"
+  website: "https://example.com/~alicewonderland"
+  location: "Milan, Italy"

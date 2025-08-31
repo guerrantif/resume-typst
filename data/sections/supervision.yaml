@@ -1,36 +1,36 @@
 students:
   - level: "Master thesis"
-    student: "Emma Chen"
-    title: "Adversarial Training Techniques for Robust Image Classification"
+    student: "Betty Boop"
+    title: "Advanced Methods for Robust Data Classification"
     year: 2024
-    cosupervisor: ["Prof. Sarah Chen"]
+    cosupervisor: ["Prof. Minerva McGonagall"]
 
   - level: "Master thesis"
-    student: "David Park"
-    title: "Efficient Neural Architecture Search for Mobile Computer Vision"
+    student: "Charlie Chaplin"
+    title: "Efficient Model Design for Resource-Limited Systems"
     year: 2024
-    cosupervisor: ["Dr. Maria Rodriguez"]
+    cosupervisor: ["Dr. Hermione Granger"]
 
   - level: "Undergraduate research"
-    student: "Sophie Williams"
-    title: "Self-Supervised Learning for Visual Representation"
+    student: "Daisy Duck"
+    title: "Unsupervised Learning for Data Representation"
     year: 2023
-    cosupervisor: ["Prof. Sarah Chen"]
+    cosupervisor: ["Prof. Minerva McGonagall"]
 
   - level: "Master thesis"
-    student: "James Liu"
-    title: "Federated Learning in Computer Vision Applications"
+    student: "Elmer Fudd"
+    title: "Distributed Learning in Practical Applications"
     year: 2023
-    cosupervisor: ["Dr. Michael Zhang"]
+    cosupervisor: ["Dr. Severus Snape"]
 
   - level: "Undergraduate research"
-    student: "Maria Garcia"
-    title: "Attention Mechanisms in Vision Transformers"
+    student: "Felix Cat"
+    title: "Focus Mechanisms in Advanced Algorithms"
     year: 2023
     cosupervisor: []
 
   - level: "Research assistant"
-    student: "Kevin Thompson"
-    title: "Multi-modal Fusion for Autonomous Driving"
+    student: "Garfield Cat"
+    title: "Multi-Source Data Integration for Automated Systems"
     year: 2022
-    cosupervisor: ["Prof. Sarah Chen"]
+    cosupervisor: ["Prof. Minerva McGonagall"]

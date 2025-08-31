@@ -1,49 +1,56 @@
 papers:
-  - id: "efficient_transformers"
-    title: "Efficient Vision Transformers for Real-Time Object Detection"
-    authors: ["Alex Jordan", "Maria Rodriguez", "David Kim", "Sarah Chen"]
+  - id: "computational_architectures"
+    title: "Novel Computational Architectures for Data Processing Tasks"
+    authors: ["Alice Wonderland", "Bob Builder", "Charlie Chocolate", "Diana Prince"]
     year: 2024
-    venue: "Conference on Computer Vision and Pattern Recognition (CVPR)"
-    link: "https://arxiv.org/abs/2024.12345"
+    venue: "International Conference on Negligible Research (ICNR)"
+    link: "https://example.com/paper1"
+    # No exclude_from = appears in all CVs
 
-  - id: "robustness_adversarial"
-    title: "Adversarial Robustness in Deep Neural Networks: A Geometric Perspective"
-    authors: ["Alex Jordan", "Jennifer Liu", "Michael Zhang"]
+  - id: "robust_systems"
+    title: "Advanced Methods for Robust Computational Systems"
+    authors: ["Alice Wonderland", "Eve Explorer", "Frank Furter"]
     year: 2024
-    venue: "International Conference on Computer Vision (ICCV)"
-    link: "https://arxiv.org/abs/2024.23456"
+    venue: "Journal of Questionable Computing Advances (JQCA)"
+    link: "https://example.com/paper2"
+    # No exclude_from = appears in all CVs
 
-  - id: "self_supervised_learning"
-    title: "Self-Supervised Learning for Visual Representation in Autonomous Systems"
-    authors: ["Alex Jordan", "Robert Wilson", "Lisa Thompson"]
+  - id: "automated_processing"
+    title: "Automated Processing Techniques for Data Representation"
+    authors: ["Alice Wonderland", "Grace Hopper-Like", "Henry Hypothesis"]
     year: 2023
-    venue: "Neural Information Processing Systems (NeurIPS)"
-    link: "https://arxiv.org/abs/2023.34567"
+    venue: "Symposium on Pretentious Computing Methods (SPCM)"
+    link: "https://example.com/paper3"
+    # No exclude_from = appears in all CVs
 
-  - id: "federated_computer_vision"
-    title: "Federated Learning Approaches for Privacy-Preserving Computer Vision"
-    authors: ["Emily Davis", "Alex Jordan", "James Brown", "Anna Garcia"]
+  - id: "distributed_computing"
+    title: "Distributed Computing Methods for Secure Data Processing"
+    authors: ["Ivan Inventor", "Alice Wonderland", "Jack Sparrow", "Kate Keeper"]
     year: 2023
-    venue: "International Conference on Machine Learning (ICML)"
-    link: "https://arxiv.org/abs/2023.45678"
+    venue: "Workshop on Overly Complex Solutions (WOCS)"
+    link: "https://example.com/paper4"
+    exclude_from: ["short"]
 
-  - id: "neural_architecture_search"
-    title: "Automated Neural Architecture Search for Edge Computing Devices"
-    authors: ["Alex Jordan", "Kevin Lee"]
+  - id: "automated_model_design"
+    title: "Automated Model Design for Resource-Constrained Environments"
+    authors: ["Alice Wonderland", "Luna Lovegood"]
     year: 2022
-    venue: "IEEE Conference on Computer Vision and Pattern Recognition (CVPR)"
-    link: "https://arxiv.org/abs/2022.56789"
+    venue: "Conference on Marginally Useful Algorithms (CMUA)"
+    link: "https://example.com/paper5"
+    exclude_from: ["short"]
 
-  - id: "multimodal_fusion"
-    title: "Multimodal Fusion Techniques for Robust Scene Understanding"
-    authors: ["Alex Jordan", "Patricia Martinez", "Steven Johnson"]
+  - id: "multi_source_integration"
+    title: "Integration Methods for Multi-Source Data Analysis"
+    authors: ["Alice Wonderland", "Max Planck-ish", "Nina Notebook"]
     year: 2022
-    venue: "European Conference on Computer Vision (ECCV)"
-    link: "https://arxiv.org/abs/2022.67890"
+    venue: "International Journal of Unimportant Thoughts (IJUT)"
+    link: "https://example.com/paper6"
+    exclude_from: ["short", "industry"]
 
-  - id: "attention_mechanisms"
-    title: "Novel Attention Mechanisms for Scalable Image Processing"
-    authors: ["Alex Jordan", "Rachel Green"]
+  - id: "processing_algorithms"
+    title: "Improved Algorithms for Large-Scale Data Processing"
+    authors: ["Alice Wonderland", "Oscar Algorithm"]
     year: 2021
-    venue: "International Conference on Learning Representations (ICLR)"
-    link: "https://arxiv.org/abs/2021.78901"
+    venue: "Proceedings of Dubious Research Excellence (PDRE)"
+    link: "https://example.com/paper7"
+    exclude_from: ["short", "industry"]

@@ -1,9 +1,9 @@
 organizations:
   - role: "Student Representative"
-    organization: "MIT Graduate Student Council"
+    organization: "Research University Graduate Student Council"
     start_date: "2022-09"
     end_date: "2023-09"
-    location: "Cambridge, MA, USA"
+    location: "Milan, Italy"
     details:
       - "Represented PhD students in department-wide policy decisions"
       - "Organized monthly seminars and networking events for 200+ graduate students"
@@ -18,7 +18,7 @@ organizations:
       - "Conduct monthly workshops on machine learning fundamentals"
 
   - role: "Member"
-    organization: "Association for Computing Machinery (ACM)"
+    organization: "Association for Extremely Interesting People (AEIP)"
     start_date: "2018-08"
     end_date: "present"
     location: "Remote"
