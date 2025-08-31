@@ -15,14 +15,4 @@ formatting:
   compact_spacing: true
   hide_details: true
 
-filters:
-  publications:
-    include_all: false
-    max_entries: 3
-    prefer_first_author: true
-  experience:
-    include_all: false
-    max_entries: 2
-  education:
-    include_all: false
-    max_entries: 2
+# All filtering now handled by exclude_from flags in data files

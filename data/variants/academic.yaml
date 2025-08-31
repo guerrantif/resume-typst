@@ -20,8 +20,4 @@ formatting:
   show_all_authors: false
   include_paper_links: true
 
-filters:
-  publications:
-    include_all: true
-  experience:
-    include_all: true
+# No filtering needed - publications use variant flags
