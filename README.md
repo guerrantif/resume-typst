@@ -26,7 +26,7 @@ A modern CV generation system that combines Typst templating with Python CLI con
 pip install resumyst
 ```
 
-Typst will be automatically installed when first needed, or you can install it manually beforehand from [typst.app](https://typst.app/docs/installation/).
+Typst will be automatically installed when first needed, or you can install it manually beforehand from [typst.app](https://github.com/typst/typst?tab=readme-ov-file#installation).
 
 ## Quick Start
 
