@@ -48,32 +48,18 @@
   // Style links
   show link: it => text(fill: rgb(config.colors.link))[#it]
 
-  // Section renderer mapping
-  let renderers = (
-    awards: render-awards,
-    education: render-education,
-    experience: render-experience,
-    memberships: render-membership,
-    publications: (item, cfg) => render-publication(item, cfg, personal.name.full),
-    reviewer: render-reviewer,
-    skills: render-skill,
-    supervision: render-supervision,
-    talks: render-talk,
-    teaching: render-teaching,
-  )
-
-  // Section title mapping
-  let titles = (
-    awards: "Awards & Scholarships",
-    education: "Education", 
-    experience: "Experience",
-    memberships: "Memberships",
-    publications: "Publications",
-    reviewer: "Reviewer",
-    skills: "Skills",
-    supervision: "Supervision",
-    talks: "Talks",
-    teaching: "Teaching",
+  // Combined section configuration: (title, renderer)
+  let sections_config = (
+    awards: ("Awards & Scholarships", render-awards),
+    education: ("Education", render-education),
+    experience: ("Experience", render-experience),
+    memberships: ("Memberships", render-membership),
+    publications: ("Publications", (item, cfg) => render-publication(item, cfg, personal.name.full)),
+    reviewer: ("Reviewer", render-reviewer),
+    skills: ("Skills", render-skill),
+    supervision: ("Supervision", render-supervision),
+    talks: ("Talks", render-talk),
+    teaching: ("Teaching", render-teaching),
   )
 
   // Render header
@@ -81,10 +67,9 @@
 
   // Render sections based on variant configuration
   for section_key in config.sections.order {
-    if section_key in sections and section_key in renderers {
+    if section_key in sections and section_key in sections_config {
       let section_data = sections.at(section_key)
-      let renderer = renderers.at(section_key)
-      let title = titles.at(section_key)
+      let (title, renderer) = sections_config.at(section_key)
       
       // Create section with proper layout
       grid(

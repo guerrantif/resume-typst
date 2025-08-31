@@ -2,67 +2,18 @@
 
 #import "config.typ": load-unified-config
 
-#let filter-publications(pubs, config, cv_name) = {
-  if config.filters.publications.include_all {
-    return pubs
-  }
-  
-  let filtered = pubs
-
-  // Sort by year (most recent first), then by first author preference
-  filtered = filtered.sorted(key: p => {
-    let year_score = if "year" in p { -p.year * 1000 } else { 0 }  // Negative for reverse sort
-    let first_author_score = if ("prefer_first_author" in config.filters.publications and 
-                                config.filters.publications.prefer_first_author and
-                                p.authors.len() > 0 and 
-                                p.authors.first().contains(cv_name)) { -100 } else { 0 }
-    year_score + first_author_score
+#let filter-by-exclude(items, variant_name) = {
+  return items.filter(item => {
+    if "exclude_from" in item {
+      not item.exclude_from.contains(variant_name)
+    } else {
+      // Default: include in all variants if no exclude_from flag
+      true
+    }
   })
-  
-  // Filter by venue/conference type if specified
-  if "venue_types" in config.filters.publications {
-    let allowed_venues = config.filters.publications.venue_types
-    filtered = filtered.filter(p => {
-      if "venue" not in p { return true }
-      allowed_venues.any(venue_type => p.venue.lower().contains(venue_type.lower()))
-    })
-  }
-  
-  // Apply max entries limit
-  if "max_entries" in config.filters.publications {
-    filtered = filtered.slice(0, calc.min(config.filters.publications.max_entries, filtered.len()))
-  }
-  
-  return filtered
 }
 
-#let filter-experience(positions, config) = {
-  let filtered = positions
-  
-  // Sort by start date (most recent first) - using negative comparison for reverse order
-  filtered = filtered.sorted(key: p => -int(p.start_date.replace("-", "")))
-  
-  // Apply max entries filter if specified
-  if "experience" in config.filters and "max_entries" in config.filters.experience {
-    filtered = filtered.slice(0, calc.min(config.filters.experience.max_entries, filtered.len()))
-  }
-  
-  return filtered
-}
-
-#let filter-education(degrees, config) = {
-  let filtered = degrees
-  
-  // Sort by start date (most recent first) - using negative comparison for reverse order
-  filtered = filtered.sorted(key: d => -int(d.start_date.replace("-", "")))
-  
-  // Apply max entries filter if specified
-  if "education" in config.filters and "max_entries" in config.filters.education {
-    filtered = filtered.slice(0, calc.min(config.filters.education.max_entries, filtered.len()))
-  }
-  
-  return filtered
-}
+// Old complex filtering functions removed - now using simple exclude_from system
 
 #let load-cv-data(variant_name: "academic", base_path: "../data") = {
   // Load unified configuration (base + variant merged)
@@ -83,10 +34,18 @@
     teaching: yaml(base_path + "/sections/teaching.yaml").courses,
   )
   
-  // Apply filtering using unified config
-  sections.publications = filter-publications(sections.publications, config, personal.name.full)
-  sections.experience = filter-experience(sections.experience, config)
-  sections.education = filter-education(sections.education, config)
+  // Apply exclude_from filtering to all sections
+  let variant_name = config.variant_name
+  sections.publications = filter-by-exclude(sections.publications, variant_name)
+  sections.experience = filter-by-exclude(sections.experience, variant_name)
+  sections.education = filter-by-exclude(sections.education, variant_name)
+  sections.awards = filter-by-exclude(sections.awards, variant_name)
+  sections.supervision = filter-by-exclude(sections.supervision, variant_name)
+  sections.teaching = filter-by-exclude(sections.teaching, variant_name)
+  sections.talks = filter-by-exclude(sections.talks, variant_name)
+  sections.memberships = filter-by-exclude(sections.memberships, variant_name)
+  sections.reviewer = filter-by-exclude(sections.reviewer, variant_name)
+  sections.skills = filter-by-exclude(sections.skills, variant_name)
   
   return (
     config: config,
