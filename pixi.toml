@@ -1,0 +1,41 @@
+[project]
+name = "resumyst-dev"
+version = "0.1.0"
+description = "Development environment for resumyst - CV generation with Typst magic"
+authors = ["Filippo Guerranti"]
+channels = ["conda-forge"]
+platforms = ["linux-64", "osx-64", "osx-arm64", "win-64"]
+
+[dependencies]
+python = ">=3.11"
+click = ">=8.0.0"
+pyyaml = ">=6.0.0"
+rich = ">=13.0.0"
+flit = "*"
+docutils = "*"
+
+
+[tasks]
+# Package management
+install-dev = "pip install -e ."
+build = "flit build"
+publish = "flit publish"
+
+# Testing the CLI
+test-init = "resumyst init test-project"
+test-build = "resumyst build academic"
+
+# Development
+dev = "typst compile build/cv.typ --root ."
+watch = "typst watch build/cv.typ --root . --input variant=academic"
+clean = "rm -rf out/* dist/* build/* test-project*"
+
+[feature.dev.dependencies]
+black = "*"
+ruff = "*"
+mypy = "*"
+pytest = "*"
+
+[environments]
+default = { solve-group = "default" }
+dev = { features = ["dev"], solve-group = "default" }
