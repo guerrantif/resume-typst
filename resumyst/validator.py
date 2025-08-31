@@ -36,8 +36,8 @@ class CVValidator:
         required_files = [
             "data/personal.yaml",
             "data/config.yaml",
-            "lib/template.typ",
-            "build/cv.typ"
+            "typst/template.typ",
+            "typst/cv.typ"
         ]
         
         for file_path in required_files:

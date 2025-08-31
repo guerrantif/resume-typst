@@ -33,8 +33,8 @@ class CVFileWatcher(FileSystemEventHandler):
         file_path = Path(event.src_path)
         relevant_paths = [
             self.project_path / "data",
-            self.project_path / "lib",
-            self.project_path / "build"
+            self.project_path / "typst",
+            self.project_path / "typst"
         ]
         
         if not any(file_path.is_relative_to(path) for path in relevant_paths):
@@ -59,7 +59,7 @@ class CVFileWatcher(FileSystemEventHandler):
             
             # Build CV
             result = subprocess.run([
-                "typst", "compile", "build/cv.typ", 
+                "typst", "compile", "typst/cv.typ", 
                 f"out/pdf/cv-{self.variant}.pdf",
                 "--root", ".",
                 "--input", f"variant={self.variant}"
@@ -141,7 +141,7 @@ class CVPreviewServer:
         
         try:
             result = subprocess.run([
-                "typst", "compile", "build/cv.typ",
+                "typst", "compile", "typst/cv.typ",
                 f"out/pdf/cv-{self.variant}.pdf", 
                 "--root", ".",
                 "--input", f"variant={self.variant}"
@@ -249,7 +249,7 @@ def start_preview_server(project_path: Path, variant: str = "academic", port: in
     """Start the live preview server."""
     
     # Validate project
-    if not (project_path / "build/cv.typ").exists():
+    if not (project_path / "typst/cv.typ").exists():
         console.print("[red]❌ No CV project found in current directory[/red]")
         console.print("[dim]Run 'resumyst init' to create a new project.[/dim]")
         return

@@ -14,7 +14,7 @@ def build_cv(variant: str, output_format: str = "pdf", watch: bool = False, skip
     """Build a specific CV variant with optional validation."""
     # Check if we're in a CV project directory
     project_path = Path.cwd()
-    if not (project_path / "build/cv.typ").exists():
+    if not (project_path / "typst/cv.typ").exists():
         raise FileNotFoundError(
             "No CV project found. Run 'resumyst init' first or navigate to a CV project directory."
         )
@@ -37,7 +37,7 @@ def build_cv(variant: str, output_format: str = "pdf", watch: bool = False, skip
     cmd = [
         "typst",
         "watch" if watch else "compile",
-        "build/cv.typ",
+        "typst/cv.typ",
         str(output_file),
         "--root", ".",
         "--input", f"variant={variant}",

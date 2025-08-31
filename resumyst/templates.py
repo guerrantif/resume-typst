@@ -9,8 +9,8 @@ def get_template_files() -> dict[str, str | bytes]:
     
     # Template files to copy from the package (included via MANIFEST.in)
     files_to_copy = [
-        "build/cv.typ", "lib/template.typ", "lib/config.typ", "lib/data.typ",
-        "lib/renderers.typ", "lib/components.typ", "lib/styles.typ",
+        "typst/cv.typ", "typst/template.typ", "typst/config.typ", "typst/data.typ",
+        "typst/renderers.typ", "typst/components.typ", "typst/styles.typ",
         "data/config.yaml", "data/personal.yaml", "Makefile", ".gitignore",
         "data/variants/academic.yaml", "data/variants/industry.yaml", "data/variants/short.yaml",
         "data/sections/experience.yaml", "data/sections/education.yaml", "data/sections/publication.yaml",
