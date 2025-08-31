@@ -2,6 +2,8 @@
 
 **Conjure the perfect CV with Typst magic** - transform YAML data into professional documents.
 
+> 🚧 **Alpha Software**: This project is in early development. Features may change and you might encounter bugs. Always review generated CVs before submitting them!
+
 |Academic|Industry|Short|
 |:-:|:-:|:-:|
 |![academic CV](out/png/cv-academic-1.png)|![industry CV](out/png/cv-industry-1.png)|![short CV](out/png/cv-short-1.png)|
