@@ -4,10 +4,10 @@ from pathlib import Path
 def get_template_files() -> dict[str, str | bytes]:
     """Return all template files as a dictionary."""
     
-    # Get the current project's files as templates
-    current_dir = Path(__file__).parent.parent
+    # Get the package directory - templates are co-located with code
+    package_dir = Path(__file__).parent
     
-    # Template files to copy from the current project
+    # Template files to copy from the package (included via MANIFEST.in)
     files_to_copy = [
         "build/cv.typ", "lib/template.typ", "lib/config.typ", "lib/data.typ",
         "lib/renderers.typ", "lib/components.typ", "lib/styles.typ",
@@ -21,7 +21,7 @@ def get_template_files() -> dict[str, str | bytes]:
     
     template_files = {}
     for file_path in files_to_copy:
-        source_file = current_dir / file_path
+        source_file = package_dir / file_path
         if source_file.exists():
             template_files[file_path] = source_file.read_text(encoding='utf-8')
     

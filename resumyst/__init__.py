@@ -2,6 +2,9 @@
 
 __version__ = "0.1.0"
 
-from .cli import main
+def main():
+    """Entry point for the CLI."""
+    from .cli import main as cli_main
+    return cli_main()
 
 __all__ = ["main"]
