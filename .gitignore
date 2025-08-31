@@ -1,0 +1,12 @@
+# OS generated files
+.DS_Store
+
+# Build artifacts
+dist/
+build/
+*.egg-info/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
