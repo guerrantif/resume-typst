@@ -12,6 +12,7 @@ from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 from rich.console import Console
 from rich.panel import Panel
+from .typst_installer import ensure_typst_available
 
 console = Console()
 
@@ -245,21 +246,18 @@ class CVPreviewServer:
         console.print("[green]✅ Server stopped cleanly![/green]")
 
 
-def start_preview_server(project_path: Path, variant: str = "academic", port: int = 8000, open_browser: bool = True):
+def start_preview_server(project_path: Path, variant: str = "academic", port: int = 8000, open_browser: bool = True, auto_install: bool = True):
     """Start the live preview server."""
+    
+    # Ensure Typst is installed
+    if not ensure_typst_available(auto_install=auto_install):
+        console.print("[red]❌ Typst installation failed[/red]")
+        return
     
     # Validate project
     if not (project_path / "typst/cv.typ").exists():
         console.print("[red]❌ No CV project found in current directory[/red]")
         console.print("[dim]Run 'resumyst init' to create a new project.[/dim]")
-        return
-    
-    # Check if typst is available
-    try:
-        subprocess.run(["typst", "--version"], capture_output=True, check=True)
-    except (subprocess.CalledProcessError, FileNotFoundError):
-        console.print("[red]❌ Typst not found. Please install Typst first.[/red]")
-        console.print("[dim]Visit: https://typst.app/docs/installation/[/dim]")
         return
     
     # Check if port is available

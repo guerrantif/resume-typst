@@ -1,6 +1,6 @@
 """Conjure the perfect CV with Typst magic - transform YAML data into professional documents."""
 
-__version__ = "0.1.1a1"
+__version__ = "0.1.1a2"
 
 def main():
     """Entry point for the CLI."""

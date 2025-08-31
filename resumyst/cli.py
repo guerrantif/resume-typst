@@ -11,7 +11,7 @@ console = Console()
 
 
 @click.group()
-@click.version_option(version="0.1.0", prog_name="resumyst")
+@click.version_option(prog_name="resumyst")
 @click.option("--verbose", "-v", is_flag=True, help="Enable verbose output")
 @click.pass_context
 def cli(ctx, verbose: bool) -> None:
@@ -73,7 +73,8 @@ def init(name: str | None, path: str | None, quick: bool = False) -> None:
 @click.option("--format", "output_format", type=click.Choice(["pdf", "png"]), default="pdf", help="Output format")
 @click.option("--watch", is_flag=True, help="Watch for changes and rebuild automatically")
 @click.option("--no-validate", is_flag=True, help="Skip data validation before building")
-def build(variant: str | None, build_all: bool, output_format: str, watch: bool, no_validate: bool) -> None:
+@click.option("--no-auto-install", is_flag=True, help="Don't auto-install Typst if missing")
+def build(variant: str | None, build_all: bool, output_format: str, watch: bool, no_validate: bool, no_auto_install: bool) -> None:
     """Build CV variants with validation."""
     if build_all:
         variants = ["academic", "industry", "short"]
@@ -88,11 +89,11 @@ def build(variant: str | None, build_all: bool, output_format: str, watch: bool,
         
         if watch and len(variants) == 1:
             console.print(f"[yellow]👀 Watching for changes... (variant: {variants[0]})[/yellow]")
-            build_cv(variants[0], output_format, watch=True, skip_validation=no_validate)
+            build_cv(variants[0], output_format, watch=True, skip_validation=no_validate, auto_install=not no_auto_install)
         else:
             for v in variants:
                 console.print(f"[blue]🔨 Building {v} variant ({output_format})[/blue]")
-                build_cv(v, output_format, skip_validation=no_validate)
+                build_cv(v, output_format, skip_validation=no_validate, auto_install=not no_auto_install)
                 
         console.print("[green]✅ Build complete![/green]")
         

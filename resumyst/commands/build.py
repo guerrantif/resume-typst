@@ -6,12 +6,17 @@ from pathlib import Path
 
 from rich.console import Console
 from ..validator import validate_project
+from ..typst_installer import ensure_typst_available
 
 console = Console()
 
 
-def build_cv(variant: str, output_format: str = "pdf", watch: bool = False, skip_validation: bool = False) -> None:
+def build_cv(variant: str, output_format: str = "pdf", watch: bool = False, skip_validation: bool = False, auto_install: bool = True) -> None:
     """Build a specific CV variant with optional validation."""
+    # Ensure Typst is installed
+    if not ensure_typst_available(auto_install=auto_install):
+        raise RuntimeError("Typst is required but not available")
+    
     # Check if we're in a CV project directory
     project_path = Path.cwd()
     if not (project_path / "typst/cv.typ").exists():
@@ -60,9 +65,7 @@ def build_cv(variant: str, output_format: str = "pdf", watch: bool = False, skip
             console.print(f"[red]Typst error: {e.stderr}[/red]")
         raise RuntimeError(f"Failed to build {variant} variant")
     except FileNotFoundError:
-        raise RuntimeError(
-            "Typst not found. Please install Typst: https://github.com/typst/typst#installation"
-        )
+        raise RuntimeError("Typst not found after installation check")
 
 
 def clean_outputs(output_format: str | None = None) -> None:
