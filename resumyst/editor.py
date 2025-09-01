@@ -88,13 +88,17 @@ class CVEditor:
         
         current_website = data.get("contact", {}).get("website", "")
         website = Prompt.ask("[cyan]Website[/cyan]", default=current_website)
-        
+
+        current_location = data.get("contact", {}).get("location", "")
+        location = Prompt.ask("[cyan]Location[/cyan]", default=current_location)
+
         # Update data
         data["name"] = {"full": name}
         data["contact"] = {
             "email": email,
             "phone": phone,
-            "website": website
+            "website": website,
+            "location": location
         }
         
         # Save
@@ -105,30 +109,35 @@ class CVEditor:
     
     def edit_experience(self):
         """Edit work experience."""
+        # TODO: Implement experience editing
         console.print("\n[bold blue]💼 Work Experience[/bold blue]")
         console.print("[dim]Full experience editing coming soon![/dim]")
         console.print("[dim]For now, edit data/sections/experience.yaml directly.[/dim]")
     
     def edit_education(self):
         """Edit education."""
+        # TODO: Implement education editing
         console.print("\n[bold blue]🎓 Education[/bold blue]")
         console.print("[dim]Full education editing coming soon![/dim]")
         console.print("[dim]For now, edit data/sections/education.yaml directly.[/dim]")
     
     def edit_skills(self):
         """Edit skills."""
+        # TODO: Implement skills editing
         console.print("\n[bold blue]🛠️  Skills[/bold blue]")
         console.print("[dim]Full skills editing coming soon![/dim]")
         console.print("[dim]For now, edit data/sections/skills.yaml directly.[/dim]")
     
     def edit_publications(self):
         """Edit publications."""
+        # TODO: Implement publications editing
         console.print("\n[bold blue]📚 Publications[/bold blue]")
         console.print("[dim]Full publications editing coming soon![/dim]")
         console.print("[dim]For now, edit data/sections/publication.yaml directly.[/dim]")
     
     def edit_awards(self):
         """Edit awards."""
+        # TODO: Implement awards editing
         console.print("\n[bold blue]🏆 Awards[/bold blue]")
         console.print("[dim]Full awards editing coming soon![/dim]")
         console.print("[dim]For now, edit data/sections/awards.yaml directly.[/dim]")
